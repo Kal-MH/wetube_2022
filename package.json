@@ -2,7 +2,7 @@
   "name": "wetube_2022",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -15,7 +15,8 @@
   },
   "homepage": "https://github.com/Kal-MH/wetube_2022#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
