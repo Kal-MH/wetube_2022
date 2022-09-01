@@ -1,6 +1,10 @@
 import express from "express";
 import morgan from "morgan";
 
+import globalRouter from "./routers/globalRouter";
+import userRouter from "./routers/userRouter";
+import videoRouter from "./routers/videoRouter";
+
 const PORT = 4000;
 const app = express();
 const loggerMiddleware = morgan("dev");
@@ -9,9 +13,9 @@ const loggerMiddleware = morgan("dev");
 app.use(loggerMiddleware);
 
 //routes
-app.get("/", (req, res) => {
-    return res.send("<h1>Home</h1>");
-})
+app.use("/", globalRouter);
+app.use("/users", userRouter);
+app.use("/videos", videoRouter);
 
 //app listening
 app.listen(PORT, () => {
