@@ -1,0 +1,9 @@
+extends base
+include mixins/video
+
+block content
+    ul 
+        each v in videos 
+            +video(v)
+        else
+            li Nothing Found.
